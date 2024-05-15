@@ -125,6 +125,16 @@ Debería salir lo siguiente:
   ```
 
 ### Como usar SSH
+- Como saber dirección IP
+```bash
+ip a
+```
+- Conectarse a un servidor SSH:
 ```bash
 ssh usuario@direccion_ip
+```
+
+- Salir de la sesión SSH:
+```bash
+exit
 ```
