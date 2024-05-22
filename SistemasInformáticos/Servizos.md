@@ -119,6 +119,14 @@ En este documento se describen diferentes servicios y configuraciones que se pue
 3. **IgnoreUserKnownHosts**: Configuración de seguridade e control de acceso.
     ```bash
     sudo sed -i 's/^#*IgnoreUserKnownHosts.*$/IgnoreUserKnownHosts no/' /etc/ssh/sshd_config
+
+    sudo sed -i 's/^#*GatewayPorts.*$/GatewayPorts no/' /etc/ssh/sshd_config
+
+    sudo sed -i 's/^#*AllowTcpForwarding.*$/AllowTcpForwarding yes/' /etc/ssh/sshd_config
+    ```
+4. **Subsistemas**: Uso de subsistemas para otras aplicaciones, como por ejemplo, FTP.
+    ```bash
+    sudo sed -i 's/^#*Subsystem\s\+sftp\s\+\/usr\/lib\/openssh\/sftp-server/Subsystem sftp \/usr\/lib\/openssh\/sftp-server/' /etc/ssh/sshd_config
     ```
 
 ### Como saber si esta instalado SSH
