@@ -212,12 +212,11 @@ exit
    ```bash
    sudo apt-get install nfs-kernel-server
    ```
-2. Comprobar que nfs-kernel-server se ha instalado correctamente
-   ```bash
-    nfs-kernel-server -v
-    ```
-    Debería mostrar la versión de nfs-kernel-server instalada: `nfs-kernel-server: version 1.3.4`
-3. Iniciar el servicio nfs-kernel-server
+2. Iniciar el servicio nfs-kernel-server
     ```bash
     sudo systemctl start nfs-kernel-server
+    ```
+3. Comprobar que el servicio se ha iniciado correctamente
+    ```bash
+    sudo systemctl status nfs-kernel-server
     ```
