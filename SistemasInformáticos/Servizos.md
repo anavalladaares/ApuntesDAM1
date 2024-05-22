@@ -105,21 +105,21 @@ En este documento se describen diferentes servicios y configuraciones que se pue
     ```
 
 ### Configuración básica de SSH
-- **PrintMotd**: Permite mensajes de entrada o conexión:
-```bash
-sudo sed -i 's/^#*PrintMotd.*$/PrintMotd yes/' /etc/ssh/sshd_config
+1. **PrintMotd**: Permite mensajes de entrada o conexión:
+    ```bash
+    sudo sed -i 's/^#*PrintMotd.*$/PrintMotd yes/' /etc/ssh/sshd_config
 
-sudo sed -i 's/^#*Banner.*$/Banner \/etc\/issue.net/' /etc/ssh/sshd_config
-```
-- **PermitRootLogin**: Habilita o deshabilita el acceso de root a través de SSH:
-```bash
-sudo sed -i 's/^PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
-```
+    sudo sed -i 's/^#*Banner.*$/Banner \/etc\/issue.net/' /etc/ssh/sshd_config
+    ```
+2. **PermitRootLogin**: Habilita o deshabilita el acceso de root a través de SSH:
+    ```bash
+    sudo sed -i 's/^PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+    ```
 
-- **IgnoreUserKnownHosts**: Configuración de seguridade e control de acceso.
-```bash
-sudo sed -i 's/^#*IgnoreUserKnownHosts.*$/IgnoreUserKnownHosts no/' /etc/ssh/sshd_config
-```
+3. **IgnoreUserKnownHosts**: Configuración de seguridade e control de acceso.
+    ```bash
+    sudo sed -i 's/^#*IgnoreUserKnownHosts.*$/IgnoreUserKnownHosts no/' /etc/ssh/sshd_config
+    ```
 
 ### Como saber si esta instalado SSH
 ```bash
