@@ -155,3 +155,18 @@ ej. ssh ana@10.0.2.15
 ```bash
 exit
 ```
+
+## Servidor Web
+### Pasos para instalar el servidor Apache en Ubuntu
+1. Instalar el servidor Apache
+   ```bash
+   apt-get install apache2
+   ```
+2. Iniciar el servicio automaticamente
+   ```bash
+   chkconfig apache2 on
+   ```
+3. Iniciar ahora el servicio:
+   ```bash
+   service apache2 start
+   ```
