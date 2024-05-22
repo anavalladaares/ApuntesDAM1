@@ -162,6 +162,11 @@ exit
    ```bash
    sudo apt-get install apache2
    ```
+2. Comprobar que Apache se ha instalado correctamente
+   ```bash
+   apache2 -v
+   ```
+   Debería mostrar la versión de Apache instalada: `Server version: Apache/2.4.41 (Ubuntu)`
 2. Iniciar el servicio automaticamente
    ```bash
    sudo systemctl enable apache2
@@ -184,3 +189,19 @@ exit
    ```bash
    service apache2 restart
    ```
+
+## Servidor FTP
+### Pasos para instalar un servidor FTP en Ubuntu
+1. Instalar el servidor FTP
+   ```bash
+   sudo apt-get install vsftpd
+   ```
+2. Comprobar que vsftpd se ha instalado correctamente
+   ```bash
+    vsftpd -v
+    ```
+    Debería mostrar la versión de vsftpd instalada: `vsftpd: version 3.0.3`
+3. Iniciar el servicio vsftpd
+    ```bash
+    sudo systemctl start vsftpd
+    ```
