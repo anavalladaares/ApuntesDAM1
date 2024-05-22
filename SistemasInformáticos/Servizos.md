@@ -91,27 +91,35 @@ En este documento se describen diferentes servicios y configuraciones que se pue
     ```bash
     sudo apt-get install ssh
     ```
-2. Iniciar el servicio SSH:
-    ```bash
-    service ssh start
-    ```
-3. Habilitar el servicio SSH para que se inicie automáticamente al arrancar el sistema:
+2. Habilitar el servicio SSH para que se inicie automáticamente al arrancar el sistema:
     ```bash
     sudo systemctl enable ssh
     ```
-4. Iniciar el servicio SSH: 
+3. Iniciar el servicio SSH: 
     ```bash
     sudo systemctl start ssh
     ```
-5. Verificar el estado del servicio SSH:
+4. Verificar el estado del servicio SSH:
     ```bash
     sudo systemctl status ssh
     ```
 
 ### Configuración básica de SSH
-- **Puerto SSH**: Por defecto, el puerto SSH es el 22. Puedes cambiarlo en `/etc/ssh/sshd_config`.
-- **PermitRootLogin**: Puedes habilitar o deshabilitar el acceso de root a través de SSH: `PermitRootLogin yes/no`.
-- **AllowUsers**: Puedes especificar qué usuarios tienen permiso para acceder a través de SSH: `AllowUsers user1 user2`.
+- **PrintMotd**: Permite mensajes de entrada o conexión:
+```bash
+sudo sed -i 's/^#*PrintMotd.*$/PrintMotd yes/' /etc/ssh/sshd_config
+
+sudo sed -i 's/^#*Banner.*$/Banner \/etc\/issue.net/' /etc/ssh/sshd_config
+```
+- **PermitRootLogin**: Habilita o deshabilita el acceso de root a través de SSH:
+```bash
+sudo sed -i 's/^PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+```
+
+- **IgnoreUserKnownHosts**: Configuración de seguridade e control de acceso.
+```bash
+sudo sed -i 's/^#*IgnoreUserKnownHosts.*$/IgnoreUserKnownHosts no/' /etc/ssh/sshd_config
+```
 
 ### Como saber si esta instalado SSH
 ```bash
@@ -132,6 +140,7 @@ ip a
 - Conectarse a un servidor SSH:
 ```bash
 ssh usuario@direccion_ip
+ej. ssh ana@10.0.2.15
 ```
 
 - Salir de la sesión SSH:
