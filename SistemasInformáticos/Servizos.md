@@ -160,11 +160,11 @@ exit
 ### Pasos para instalar el servidor Apache en Ubuntu
 1. Instalar el servidor Apache
    ```bash
-   apt-get install apache2
+   sudo apt-get install apache2
    ```
 2. Iniciar el servicio automaticamente
    ```bash
-   chkconfig apache2 on
+   sudo systemctl enable apache2
    ```
 3. Iniciar ahora el servicio:
    ```bash
