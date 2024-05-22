@@ -205,3 +205,19 @@ exit
     ```bash
     sudo systemctl start vsftpd
     ```
+
+## Servidor NFS
+### Pasos para instalar un servidor NFS en Ubuntu
+1. Instalar el servidor NFS
+   ```bash
+   sudo apt-get install nfs-kernel-server
+   ```
+2. Comprobar que nfs-kernel-server se ha instalado correctamente
+   ```bash
+    nfs-kernel-server -v
+    ```
+    Debería mostrar la versión de nfs-kernel-server instalada: `nfs-kernel-server: version 1.3.4`
+3. Iniciar el servicio nfs-kernel-server
+    ```bash
+    sudo systemctl start nfs-kernel-server
+    ```
