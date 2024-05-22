@@ -170,3 +170,17 @@ exit
    ```bash
    service apache2 start
    ```
+### Pasos para instalar PHP en Ubuntu
+1. Instalar PHP
+   ```bash
+   sudo apt-get install php
+   ```
+2. Comprobar que PHP se ha instalado correctamente
+   ```bash
+   php -v
+   ```
+   Debería mostrar la versión de PHP instalada: `PHP 8.1.2 (cli) (built: Oct  6 2021 08:47:56) ( NTS )`
+3. Reiniciar el servidor Apache
+   ```bash
+   service apache2 restart
+   ```
